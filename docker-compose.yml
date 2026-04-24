@@ -1,4 +1,17 @@
 services:
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "3000"
+    env_file: .env
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - proxy-network
+
   dev:
     build:
       context: .
@@ -14,21 +27,8 @@ services:
       - NODE_ENV=development
       - WATCHPACK_POLLING=true
     restart: unless-stopped
-    networks:
-      - proxy-network
-
-  prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    expose:
-      - "3000"
-    env_file: .env
-    environment:
-      - NODE_ENV=production
-    restart: unless-stopped
     profiles:
-      - prod
+      - dev
     networks:
       - proxy-network
 

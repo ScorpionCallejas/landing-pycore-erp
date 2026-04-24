@@ -1,8 +1,14 @@
 "use client";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { DashboardMockup } from "@/components/ui/DashboardMockup";
 import { useDemoModal } from "@/lib/demo-context";
+
+// ssr:false evita el hydration mismatch — las partículas son puramente decorativas
+const ParticleBackground = dynamic(
+  () => import("@/components/ui/ParticleBackground").then(m => ({ default: m.ParticleBackground })),
+  { ssr: false }
+);
 
 const pillStats = [
   { icon: "🧩", text: "14 módulos integrados" },
