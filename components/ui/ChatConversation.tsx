@@ -79,7 +79,7 @@ export function ChatConversation() {
         display: "flex",
         flexDirection: "column",
         height: "380px",
-        maxWidth: "480px",
+        maxWidth: "min(480px, 100%)",
         width: "100%",
       }}
     >

@@ -26,12 +26,12 @@ export function InsightBadge({ level, text, delay = 0 }: InsightBadgeProps) {
         background: s.bg,
         border: `1px solid ${s.border}`,
         borderRadius: "12px",
-        padding: "10px 14px",
+        padding: "10px 12px",
         display: "flex",
         alignItems: "center",
-        gap: "10px",
-        color: "#E6F2EE",
-        fontSize: "13px",
+        gap: "8px",
+        color: "var(--text, #E6F2EE)",
+        fontSize: "clamp(11px, 3vw, 13px)",
       }}
     >
       <span

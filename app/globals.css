@@ -36,7 +36,16 @@
   50%       { transform: translateY(-6px); }
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  /* Evita que elementos absolutos/transformados causen scroll horizontal */
+  position: relative;
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

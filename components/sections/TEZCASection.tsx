@@ -30,7 +30,7 @@ export function TEZCASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-heading text-3xl lg:text-5xl font-bold text-[#E6F2EE] mb-4"
+            className="font-heading text-2xl sm:text-3xl lg:text-5xl font-bold text-[#E6F2EE] mb-4"
           >
             TEZCA — Tu consejero de negocios con IA
           </motion.h2>
@@ -124,7 +124,7 @@ export function TEZCASection() {
         </div>
 
         {/* Feature pills */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full">
           {TEZCA_FEATURES.map((f, i) => (
             <motion.div
               key={f.label}

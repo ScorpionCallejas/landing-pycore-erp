@@ -18,7 +18,7 @@ export function DashboardMockup() {
         padding: "24px",
         color: "#E6F2EE",
         animation: "dashFloat 4s ease-in-out infinite",
-        maxWidth: "480px",
+        maxWidth: "min(480px, 100%)",
         width: "100%",
       }}
     >

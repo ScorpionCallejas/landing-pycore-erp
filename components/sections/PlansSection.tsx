@@ -30,8 +30,8 @@ export function PlansSection() {
         </div>
 
         {/* Grid: mismo tamaño para todas las tarjetas */}
-        <div className="overflow-x-auto pb-4 md:overflow-x-visible md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
-          <div className="flex gap-5 min-w-max md:min-w-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6">
+        <div className="overflow-x-auto pb-4 md:overflow-x-visible md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex gap-4 min-w-max md:min-w-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6">
             {PLANS.map((plan, i) => (
               <motion.div
                 key={plan.name}

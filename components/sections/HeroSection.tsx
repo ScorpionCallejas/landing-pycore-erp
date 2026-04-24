@@ -22,15 +22,15 @@ export function HeroSection() {
     >
       <ParticleBackground />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 w-full">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           {/* Copy */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2 border border-[#7AE0C3]/40 bg-[#7AE0C3]/10 rounded-full px-4 py-1.5 text-[#7AE0C3] text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 border border-[#7AE0C3]/40 bg-[#7AE0C3]/10 rounded-full px-3 py-1.5 text-[#7AE0C3] text-xs sm:text-sm font-medium mb-5"
             >
               🇲🇽 Hecho en México para PyMEs mexicanas
             </motion.div>
@@ -39,7 +39,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0 }}
-              className="font-heading text-5xl lg:text-7xl font-extrabold text-[#E6F2EE] leading-tight mb-4"
+              className="font-heading text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#E6F2EE] leading-tight mb-4"
             >
               El{" "}
               <span
@@ -107,13 +107,14 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Mockup */}
+          {/* Mockup — oculto en móvil pequeño para evitar overflow */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             whileHover={{ rotateY: 3, rotateX: -2 }}
-            style={{ perspective: 1000, display: "flex", justifyContent: "center" }}
+            className="hidden sm:flex justify-center"
+            style={{ perspective: 1000 }}
           >
             <DashboardMockup />
           </motion.div>

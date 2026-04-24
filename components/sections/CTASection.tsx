@@ -37,7 +37,7 @@ export function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-heading text-4xl lg:text-5xl font-extrabold text-white mb-4"
+          className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4"
         >
           ¿Listo para tomar el control?
         </motion.h2>

@@ -62,7 +62,7 @@ export function TEZCAPageContent() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15 }}
-            className="font-heading text-5xl lg:text-7xl font-bold mb-5"
+            className="font-heading text-4xl sm:text-5xl lg:text-7xl font-bold mb-5"
             style={{ color: "#E6F2EE" }}
           >
             TEZCA

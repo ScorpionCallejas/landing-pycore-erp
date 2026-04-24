@@ -62,7 +62,7 @@ export function DashboardSection() {
                 ].map((m) => (
                   <div key={m.l} style={{ background: "rgba(14,124,102,0.2)", borderRadius: "10px", padding: "10px" }}>
                     <p style={{ fontSize: "9px", color: "#94B8B0", marginBottom: "4px" }}>{m.l}</p>
-                    <p style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "14px", fontWeight: 700 }}>{m.v}</p>
+                    <p style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "clamp(11px, 2vw, 14px)", fontWeight: 700 }}>{m.v}</p>
                     <span style={{ fontSize: "9px", color: "#2ECC71" }}>{m.c}</span>
                   </div>
                 ))}
@@ -94,7 +94,7 @@ export function DashboardSection() {
                 <div className="flex flex-col gap-2">
                   {paymentBars.map((b) => (
                     <div key={b.label} className="flex items-center gap-2">
-                      <span style={{ fontSize: "10px", color: "#94B8B0", width: "80px", flexShrink: 0 }}>{b.label}</span>
+                      <span style={{ fontSize: "10px", color: "#94B8B0", width: "60px", flexShrink: 0 }}>{b.label}</span>
                       <div style={{ flex: 1, background: "rgba(255,255,255,0.08)", borderRadius: "4px", height: "6px" }}>
                         <div style={{ width: `${b.pct}%`, height: "100%", background: b.color, borderRadius: "4px" }} />
                       </div>

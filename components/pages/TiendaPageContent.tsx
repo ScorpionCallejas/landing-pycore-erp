@@ -83,7 +83,7 @@ export function TiendaPageContent() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-heading text-4xl lg:text-6xl font-bold text-[#E6F2EE] mb-5"
+            className="font-heading text-3xl sm:text-4xl lg:text-6xl font-bold text-[#E6F2EE] mb-5"
           >
             Tu tienda en línea,
             <br />
