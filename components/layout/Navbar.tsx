@@ -43,7 +43,6 @@ export function Navbar() {
             width={36}
             height={36}
             className="h-9 w-9 object-contain"
-            priority
           />
           <span className="font-heading font-bold text-lg text-[var(--text)]">PyCore ERP</span>
         </a>

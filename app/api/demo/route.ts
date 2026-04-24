@@ -10,6 +10,10 @@ export interface DemoFormData {
   mensaje?: string;
 }
 
+function esc(s: string) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
 async function sendEmailViaResend(data: DemoFormData): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey || apiKey.includes("xxxx")) return false;
@@ -17,13 +21,13 @@ async function sendEmailViaResend(data: DemoFormData): Promise<boolean> {
   const html = `
     <h2>Nueva solicitud de demo — PyCore ERP</h2>
     <table style="border-collapse:collapse;width:100%;max-width:560px">
-      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Nombre</td><td style="padding:8px">${data.nombre}</td></tr>
-      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Empresa</td><td style="padding:8px">${data.empresa}</td></tr>
-      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Email</td><td style="padding:8px">${data.email}</td></tr>
-      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Teléfono</td><td style="padding:8px">${data.telefono}</td></tr>
-      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Plan interés</td><td style="padding:8px">${data.plan}</td></tr>
-      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Usuarios</td><td style="padding:8px">${data.usuarios}</td></tr>
-      ${data.mensaje ? `<tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Mensaje</td><td style="padding:8px">${data.mensaje}</td></tr>` : ""}
+      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Nombre</td><td style="padding:8px">${esc(data.nombre)}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Empresa</td><td style="padding:8px">${esc(data.empresa)}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Email</td><td style="padding:8px">${esc(data.email)}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Teléfono</td><td style="padding:8px">${esc(data.telefono)}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Plan interés</td><td style="padding:8px">${esc(data.plan)}</td></tr>
+      <tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Usuarios</td><td style="padding:8px">${esc(data.usuarios)}</td></tr>
+      ${data.mensaje ? `<tr><td style="padding:8px;font-weight:bold;background:#f2f8f6">Mensaje</td><td style="padding:8px">${esc(data.mensaje)}</td></tr>` : ""}
     </table>
   `;
 
@@ -34,12 +38,17 @@ async function sendEmailViaResend(data: DemoFormData): Promise<boolean> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from:    process.env.EMAIL_FROM    ?? "noreply@pycore.app",
-      to:      [process.env.EMAIL_TO     ?? "ventas@pycore.app"],
+      from:    process.env.EMAIL_FROM ?? "noreply@pycore.app",
+      to:      [process.env.EMAIL_TO  ?? "scorpion@cyco.tech"],
       subject: `[Demo] ${data.nombre} — ${data.empresa}`,
       html,
     }),
   });
+
+  if (!res.ok) {
+    const body = await res.text();
+    console.error(`[Resend] ${res.status} — ${body}`);
+  }
 
   return res.ok;
 }
