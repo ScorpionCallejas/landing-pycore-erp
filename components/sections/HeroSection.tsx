@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { DashboardMockup } from "@/components/ui/DashboardMockup";
+import { DeviceMockup } from "@/components/ui/DeviceMockup";
 import { useDemoModal } from "@/lib/demo-context";
 
 // ssr:false evita el hydration mismatch — las partículas son puramente decorativas
@@ -11,7 +11,7 @@ const ParticleBackground = dynamic(
 );
 
 const pillStats = [
-  { icon: "🧩", text: "14 módulos integrados" },
+  { icon: "🧩", text: "10 módulos integrados" },
   { icon: "📶", text: "Funciona sin internet" },
   { icon: "🧾", text: "CFDI incluido" },
   { icon: "🤖", text: "IA integrada" },
@@ -122,7 +122,7 @@ export function HeroSection() {
             className="hidden sm:flex justify-center"
             style={{ perspective: 1000 }}
           >
-            <DashboardMockup />
+            <DeviceMockup />
           </motion.div>
         </div>
       </div>
