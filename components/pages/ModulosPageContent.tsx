@@ -340,14 +340,7 @@ export function ModulosPageContent() {
                   <span className="text-[var(--text-muted)]">{mod.benefit}</span>
                 </div>
 
-                {mod.link && (
-                  <a
-                    href={mod.link}
-                    className="text-[var(--color-primary)] text-sm font-medium hover:underline self-start"
-                  >
-                    Ver página completa de TEZCA →
-                  </a>
-                )}
+
               </motion.div>
             ))}
           </div>
