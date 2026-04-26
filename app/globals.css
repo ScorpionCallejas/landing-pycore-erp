@@ -38,12 +38,11 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
-  overflow-x: hidden;
-  /* Evita que elementos absolutos/transformados causen scroll horizontal */
+  overflow-x: clip;
   position: relative;
 }
 
