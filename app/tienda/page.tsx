@@ -18,12 +18,21 @@ export const metadata: Metadata = {
     title:       "Tienda en Línea para tu Negocio — PyCore ERP",
     description: "Tu catálogo público conectado en tiempo real con tu inventario. Sin doble captura. Mercado Pago incluido.",
     url:         `${SITE_URL}/tienda`,
-    images: [{ url: "/web-app-manifest-512x512.png", width: 512, height: 512, alt: "Tienda en Línea PyCore ERP" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Tienda en Línea — PyCore ERP" }],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
+  "@graph": [
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio",         item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Tienda en Línea", item: `${SITE_URL}/tienda` },
+    ],
+  },
+  {
   "@type": "WebPage",
   name: "Tienda en Línea — PyCore ERP",
   description: "Módulo de tienda en línea de PyCore ERP conectado en tiempo real al inventario.",
@@ -40,6 +49,8 @@ const jsonLd = {
       "Sincronización automática con inventario ERP",
     ],
   },
+  },
+  ],
 };
 
 export default function TiendaPage() {

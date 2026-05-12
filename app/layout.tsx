@@ -62,10 +62,10 @@ export const metadata: Metadata = {
     locale:      "es_MX",
     images: [
       {
-        url:    "/web-app-manifest-512x512.png",
-        width:  512,
-        height: 512,
-        alt:    "PyCore ERP",
+        url:    "/og-image.png",
+        width:  1200,
+        height: 630,
+        alt:    "PyCore ERP — El núcleo de tu negocio",
       },
     ],
   },
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card:        "summary_large_image",
     title:       "PyCore ERP — El núcleo de tu negocio",
     description: "ERP modular en la nube para PyMEs mexicanas.",
-    images:      ["/web-app-manifest-512x512.png"],
+    images:      ["/og-image.png"],
     creator:     "@pycoreerp",
   },
 
@@ -134,12 +134,19 @@ const jsonLd = {
       description:        "ERP modular en la nube para PyMEs mexicanas. Ventas, inventario, finanzas, facturación CFDI y tienda en línea en un solo sistema.",
       applicationCategory: "BusinessApplication",
       operatingSystem:    "Web",
+      datePublished: "2024-01-01",
       offers: {
-        "@type":     "AggregateOffer",
+        "@type":       "AggregateOffer",
         priceCurrency: "MXN",
-        lowPrice:    "499",
-        highPrice:   "1099",
-        offerCount:  "4",
+        lowPrice:      "649",
+        highPrice:     "1399",
+        offerCount:    "4",
+        offers: [
+          { "@type": "Offer", name: "Básico",       price: "649",  priceCurrency: "MXN", priceSpecification: { "@type": "UnitPriceSpecification", price: "649",  priceCurrency: "MXN", unitText: "MON" } },
+          { "@type": "Offer", name: "Profesional",  price: "1000", priceCurrency: "MXN", priceSpecification: { "@type": "UnitPriceSpecification", price: "1000", priceCurrency: "MXN", unitText: "MON" } },
+          { "@type": "Offer", name: "Empresarial",  price: "1399", priceCurrency: "MXN", priceSpecification: { "@type": "UnitPriceSpecification", price: "1399", priceCurrency: "MXN", unitText: "MON" } },
+          { "@type": "Offer", name: "Elite",        priceSpecification: { "@type": "UnitPriceSpecification", description: "Precio personalizado" } },
+        ],
       },
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "es-MX",
@@ -161,6 +168,76 @@ const jsonLd = {
       name:          "PyCore ERP",
       publisher:     { "@id": `${SITE_URL}/#organization` },
       inLanguage:    "es-MX",
+    },
+    {
+      "@type": "FAQPage",
+      "@id":   `${SITE_URL}/#faq`,
+      mainEntity: [
+        {
+          "@type":          "Question",
+          name:             "¿Qué es PyCore ERP?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:    "PyCore ERP es un sistema de gestión empresarial (ERP) modular en la nube diseñado para PyMEs mexicanas. Integra inventario, ventas, facturación CFDI, finanzas, recursos humanos y tienda en línea en una sola plataforma.",
+          },
+        },
+        {
+          "@type":          "Question",
+          name:             "¿Cuánto cuesta PyCore ERP?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:    "PyCore ERP tiene tres planes: Básico desde $649 MXN/mes, Profesional a $1,000 MXN/mes y Empresarial a $1,399 MXN/mes. También existe un plan Elite con precio personalizado para cadenas y grupos empresariales. Todos los precios son más IVA y sin contratos de permanencia.",
+          },
+        },
+        {
+          "@type":          "Question",
+          name:             "¿PyCore ERP incluye facturación CFDI?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:    "Sí. PyCore ERP incluye facturación CFDI ilimitada integrada directamente con el SAT desde el plan Profesional. Genera facturas, notas de crédito y complementos de pago sin salir del sistema.",
+          },
+        },
+        {
+          "@type":          "Question",
+          name:             "¿Puedo usar PyCore ERP sin conexión a internet?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:    "Sí. El módulo de Ventas y Punto de Venta (POS) de PyCore ERP funciona en modo offline. Las ventas se sincronizan automáticamente cuando se recupera la conexión.",
+          },
+        },
+        {
+          "@type":          "Question",
+          name:             "¿PyCore ERP sirve para negocios con varias sucursales?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:    "Sí. PyCore ERP soporta multi-sucursal desde el plan Profesional (hasta 3 sucursales) y sucursales ilimitadas en el plan Empresarial y Elite. Puedes gestionar inventario, ventas y personal de cada sucursal desde un solo panel.",
+          },
+        },
+        {
+          "@type":          "Question",
+          name:             "¿Qué es TEZCA en PyCore ERP?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:    "TEZCA es el asistente de inteligencia artificial integrado en PyCore ERP. Analiza tu operación cada hora, genera alertas automáticas de stock bajo o cuentas vencidas, responde preguntas con tus datos reales y proporciona recomendaciones de negocio.",
+          },
+        },
+        {
+          "@type":          "Question",
+          name:             "¿PyCore ERP tiene tienda en línea?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:    "Sí. El plan Empresarial incluye tienda en línea conectada en tiempo real con el inventario del ERP, con cobros integrados via Mercado Pago, seguimiento de pedidos y catálogo público personalizable.",
+          },
+        },
+        {
+          "@type":          "Question",
+          name:             "¿Hay contrato de permanencia en PyCore ERP?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text:    "No. PyCore ERP no tiene contratos de permanencia ni costos de migración. Puedes cambiar de plan o cancelar cuando tu negocio lo necesite.",
+          },
+        },
+      ],
     },
   ],
 };

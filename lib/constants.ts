@@ -184,7 +184,7 @@ export const PLANS: {
   {
     name: "Básico",
     subtitle: "Negocios informales que empiezan a organizarse",
-    price: "$499",
+    price: "$649",
     priceNote: "/ mes",
     features: [
       "Inventario en tiempo real",
@@ -200,7 +200,7 @@ export const PLANS: {
   {
     name: "Profesional",
     subtitle: "Negocios establecidos que necesitan control total",
-    price: "$799",
+    price: "$1,000",
     priceNote: "/ mes",
     features: [
       "Todo lo del plan Básico",
@@ -217,7 +217,7 @@ export const PLANS: {
   {
     name: "Empresarial",
     subtitle: "Operaciones multi-sucursal con equipo amplio",
-    price: "$1,099",
+    price: "$1,399",
     priceNote: "/ mes",
     features: [
       "Todo lo del plan Profesional",

@@ -18,12 +18,21 @@ export const metadata: Metadata = {
     title:       "TEZCA — Tu Consejero de Negocios con IA · PyCore ERP",
     description: "Analiza tu negocio en tiempo real, genera alertas automáticas y te dice qué hacer con tus datos. Sin configuración.",
     url:         `${SITE_URL}/tezca`,
-    images: [{ url: "/web-app-manifest-512x512.png", width: 512, height: 512, alt: "TEZCA IA PyCore ERP" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "TEZCA IA — PyCore ERP" }],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
+  "@graph": [
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "TEZCA",  item: `${SITE_URL}/tezca` },
+    ],
+  },
+  {
   "@type": "SoftwareApplication",
   name: "TEZCA — Consejero de Negocios con IA",
   description: "Asistente de inteligencia artificial integrado en PyCore ERP que analiza la operación del negocio en tiempo real.",
@@ -39,6 +48,8 @@ const jsonLd = {
     "Historial de conversaciones",
   ],
   isPartOf: { "@type": "SoftwareApplication", name: "PyCore ERP", url: SITE_URL },
+  },
+  ],
 };
 
 export default function TEZCAPage() {
